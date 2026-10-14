@@ -1,0 +1,6 @@
+homepage: "https://nitea.se"
+documentation: "https://github.com/niteaorg/nitea-consent-gtm-template#readme"
+versions:
+  # Newest first. Added by `npm run gallery:release -w @nc/gtm-template`:
+  # each sha is the commit in this repository that contains the template.tpl to publish.
+  []
