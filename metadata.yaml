@@ -1,6 +1,9 @@
 homepage: "https://nitea.se"
 documentation: "https://github.com/niteaorg/nitea-consent-gtm-template#readme"
 versions:
+  - sha: 55dd1c436ce5be6c76dde36e23624bf0ee71f905
+    changeNotes: |-
+      Fixes the data layer permission (keyPatterns) that made the tag throw an exception before setting consent defaults and loading the banner.
   - sha: a60684ba2485f855a40b80c182389f0b6db0a555
     changeNotes: |-
       Loads the banner from cookieconsent.nitea.ai. The banner now supports Danish, German, Finnish and Polish, and one site can span several domains.
