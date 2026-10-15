@@ -14,7 +14,7 @@ You need a site in Nitea Consent. Nitea sets it up for you and gives you access 
 
 1. In Google Tag Manager, go to **Templates** → **Tag Templates** → **Search Gallery**, search for **Nitea Consent CMP** and click **Add to workspace**.
 2. Go to **Tags** → **New** → **Tag Configuration** and choose **Nitea Consent CMP**.
-3. Enter your **Site ID**. It's on the site's overview page in the Nitea Consent dashboard.
+3. Enter your **Site ID**. It's on the site's overview page in the Nitea Consent dashboard. If the site has several domains, for example one per language, use the same Site ID on all of them.
 4. Under **Triggering**, choose **Consent Initialization - All Pages**. This trigger fires before every other trigger, which Consent Mode needs.
 5. If you're replacing another CMP (for example CookieYes or Cookiebot), pause or delete its tag in the same version, and remove any banner script hard-coded on the site.
 6. Test in **Preview** (see [Verify the setup](#verify-the-setup)) and publish the container.
@@ -29,7 +29,7 @@ You need a site in Nitea Consent. Nitea sets it up for you and gives you access 
 | **Redact ads data when ad_storage is denied** | Sets `ads_data_redaction`, so Google Ads and Floodlight tags drop ad click identifiers when marketing isn't accepted. On by default. |
 | **Pass ad click information through URLs** | Sets `url_passthrough`, which keeps click information in link parameters between pages when cookies are denied. Better measurement, but extra parameters in your URLs. Off by default. |
 
-The banner's look, texts, languages and categories are set in the Nitea Consent dashboard, not in the tag. Changes there are published without touching GTM.
+The banner's look, texts, languages and categories are set in the Nitea Consent dashboard, not in the tag. Changes there are published without touching GTM. The banner is available in Swedish, English, Danish, German, Finnish and Polish. It picks the language set for the visitor's domain, otherwise the page's `lang` attribute.
 
 ### Example: denied in Europe, granted elsewhere
 
@@ -99,7 +99,7 @@ To see which tags have consent settings, turn on **Enable consent overview** und
 | Problem | Check |
 |---|---|
 | The banner doesn't show | The Site ID, that the site is published in the Nitea Consent dashboard, and the browser console for blocked requests. |
-| Your site uses a Content Security Policy | Allow `https://consent.nitea.se` in `script-src` and `connect-src`. |
+| Your site uses a Content Security Policy | Allow `https://cookieconsent.nitea.ai` in `script-src` and `connect-src`. |
 | Tags fire before consent | The Nitea Consent CMP tag must use **Consent Initialization - All Pages**, and non-Google tags need consent settings. |
 | Two banners show | Remove the old CMP's tag and any hard-coded banner script. |
 | Choices aren't logged | Visits must come from the site's domain or its subdomains. |
@@ -112,7 +112,7 @@ The template asks for these permissions in GTM:
 |---|---|
 | Accesses consent state (write) | Sets the default state and updates it when the visitor chooses. |
 | Reads cookie values: `nc_consent` | Applies a saved choice before the banner has loaded. |
-| Injects scripts: `https://consent.nitea.se/` | Loads your site's banner. |
+| Injects scripts: `https://cookieconsent.nitea.ai/` | Loads your site's banner. |
 | Accesses global variables: `NiteaConsent._registerGtm` | Lets the banner report new choices back to the tag. |
 | Writes to the data layer: `ads_data_redaction`, `url_passthrough` | The two checkboxes in the settings. |
 | Logs to console (debug only) | Explains a failed banner load in Preview. |

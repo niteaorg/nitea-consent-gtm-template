@@ -176,7 +176,7 @@ const makeInteger = require('makeInteger');
 const setDefaultConsentState = require('setDefaultConsentState');
 const updateConsentState = require('updateConsentState');
 
-const SCRIPT_BASE = 'https://consent.nitea.se/s/';
+const SCRIPT_BASE = 'https://cookieconsent.nitea.ai/s/';
 const COOKIE_NAME = 'nc_consent';
 const CATEGORIES = ['functional', 'analytics', 'marketing'];
 // Must match CATEGORY_TO_GCM in packages/shared/src/categories.ts
@@ -584,7 +584,7 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "https://consent.nitea.se/"
+                "string": "https://cookieconsent.nitea.ai/"
               }
             ]
           }
