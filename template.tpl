@@ -665,7 +665,7 @@ ___WEB_PERMISSIONS___
       },
       "param": [
         {
-          "key": "keysToWrite",
+          "key": "keyPatterns",
           "value": {
             "type": 2,
             "listItem": [
