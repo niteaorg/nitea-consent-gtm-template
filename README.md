@@ -16,7 +16,7 @@ You need a site in Nitea Consent. Nitea sets it up for you and gives you access 
 2. Go to **Tags** → **New** → **Tag Configuration** and choose **Nitea Consent CMP**.
 3. Enter your **Site ID**. It's on the site's overview page in the Nitea Consent dashboard. If the site has several domains, for example one per language, use the same Site ID on all of them.
 4. Under **Triggering**, choose **Consent Initialization - All Pages**. This trigger fires before every other trigger, which Consent Mode needs.
-5. If you're replacing another CMP (for example CookieYes or Cookiebot), pause or delete its tag in the same version, and remove any banner script hard-coded on the site.
+5. If you're replacing another consent tool, pause or delete its tag in the same version, and remove any banner script hard-coded on the site.
 6. Test in **Preview** (see [Verify the setup](#verify-the-setup)) and publish the container.
 
 ## Settings
