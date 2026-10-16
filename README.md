@@ -29,7 +29,7 @@ You need a site in Nitea Consent. Nitea sets it up for you and gives you access 
 | **Redact ads data when ad_storage is denied** | Sets `ads_data_redaction`, so Google Ads and Floodlight tags drop ad click identifiers when marketing isn't accepted. On by default. |
 | **Pass ad click information through URLs** | Sets `url_passthrough`, which keeps click information in link parameters between pages when cookies are denied. Better measurement, but extra parameters in your URLs. Off by default. |
 
-The banner's look, texts, languages and categories are set in the Nitea Consent dashboard, not in the tag. Changes there are published without touching GTM. The banner is available in Swedish, English, Danish, German, Finnish and Polish. It picks the language set for the visitor's domain, otherwise the page's `lang` attribute.
+The banner's look, texts, languages and categories are set in the Nitea Consent dashboard, not in the tag. Changes there are published without touching GTM. The banner comes with texts in Swedish, English, Danish, German, Finnish and Polish, and any other language can be added with your own texts. It picks the language set for the visitor's domain, otherwise the page's `lang` attribute.
 
 ### Example: denied in Europe, granted elsewhere
 
