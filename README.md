@@ -13,6 +13,7 @@ You need a site in Nitea Consent. Nitea sets it up for you and gives you access 
 ## Installation
 
 1. In Google Tag Manager, go to **Templates** → **Tag Templates** → **Search Gallery**, search for **Nitea Consent CMP** and click **Add to workspace**.
+   While the template is under review for the gallery, import it instead: download [`template.tpl`](template.tpl) from this repository, go to **Templates** → **Tag Templates** → **New**, open the menu in the top right, choose **Import** and save. An imported template doesn't receive updates; add it from the gallery once it's listed there.
 2. Go to **Tags** → **New** → **Tag Configuration** and choose **Nitea Consent CMP**.
 3. Enter your **Site ID**. It's on the site's overview page in the Nitea Consent dashboard. If the site has several domains, for example one per language, use the same Site ID on all of them.
 4. Under **Triggering**, choose **Consent Initialization - All Pages**. This trigger fires before every other trigger, which Consent Mode needs.
@@ -80,10 +81,10 @@ To use it, create **Data Layer Variables** for `nc_consent.analytics` and `nc_co
 Visitors must be able to change or withdraw consent as easily as they gave it. By default the banner shows a small button in the corner of the page for this (it can be turned off in the dashboard). You can also add a link, for example in the footer:
 
 ```html
-<a href="#" data-nc-open>Cookie settings</a>
+<a href="/cookie-policy" data-nc-open>Cookie settings</a>
 ```
 
-Any element with `data-nc-open` opens the settings. From JavaScript: `NiteaConsent.showPreferences()`.
+Any element with `data-nc-open` opens the settings. Point the link's `href` at your cookie policy, so it still leads somewhere if the banner script is blocked or fails to load. From JavaScript: `NiteaConsent.showPreferences()`. The `niteaconsent:ready` event on `window` fires once `window.NiteaConsent` is available, so your own code can wait for it instead of polling.
 
 ## Verify the setup
 
